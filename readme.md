@@ -10,7 +10,7 @@ Software Developer merupakan salah satu profesi programmer yang memiliki tugas u
 
 ### Data Cleaning
 
-import library dasar
+Import library dasar
 
 ```python
 import pandas as pd
@@ -23,6 +23,8 @@ Pengambilan dataframe dari dataset dan menampilkan 5 baris pertama pada data yan
 df = pd.read_csv("survey_results_public.csv")
 df.head()
 ```
+
+Output :
 
 ```
 	Respondent	MainBranch	Hobbyist	Age	Age1stCode	CompFreq	CompTotal	ConvertedComp	Country	CurrencyDesc	...	SurveyEase	SurveyLength	Trans	UndergradMajor	WebframeDesireNextYear	WebframeWorkedWith	WelcomeChange	WorkWeekHrs	YearsCode	YearsCodePro
