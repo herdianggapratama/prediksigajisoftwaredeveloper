@@ -181,3 +181,25 @@ def clean_education(x):
 
 df['EdLevel'] = df['EdLevel'].apply(clean_education)
 ```
+
+11. Datapoint Experience memiliki nilai dengan datatype float sedangkan datapoint Education Level dan Country memiliki nilai dengan datatype string. Maka dari itu kita perlu menyamakan datatypenya dengan menggunakan library LabelEncoder
+
+```python
+from sklearn.preprocessing import LabelEncoder
+```
+
+Education Level
+
+```python
+le_education = LabelEncoder()
+df['EdLevel'] = le_education.fit_transform(df['EdLevel'])
+df["EdLevel"].unique()
+```
+
+Country
+
+```python
+le_country = LabelEncoder()
+df['Country'] = le_country.fit_transform(df['Country'])
+df["Country"].unique()
+```
