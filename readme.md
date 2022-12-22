@@ -205,10 +205,22 @@ df['EdLevel'] = le_education.fit_transform(df['EdLevel'])
 df["EdLevel"].unique()
 ```
 
+Output:
+
+```
+array([1, 2, 0, 3])
+```
+
 Country
 
 ```python
 le_country = LabelEncoder()
 df['Country'] = le_country.fit_transform(df['Country'])
 df["Country"].unique()
+```
+
+Output:
+
+```
+array([14, 13, 11,  8,  4,  2,  7,  1,  3,  6,  5, 12,  9,  0, 10])
 ```
