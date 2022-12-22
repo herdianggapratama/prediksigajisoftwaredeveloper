@@ -34,3 +34,22 @@ Output :
 3	4	I am a developer by profession	Yes	25.0	18	NaN	NaN	NaN	Albania	Albanian lek	...	NaN	NaN	No	Computer science, computer engineering, or sof...	NaN	NaN	Somewhat less welcome now than last year	40.0	7	4
 4	5	I used to be a developer by profession, but no...	Yes	31.0	16	NaN	NaN	NaN	United States	NaN	...	Easy	Too short	No	Computer science, computer engineering, or sof...	Django;Ruby on Rails	Ruby on Rails	Just as welcome now as I felt last year	NaN	15	8
 ```
+
+Menampilkan dan mengganti nama kolom-kolom yang dibutuhkan dan akan ditampilkan
+
+```python
+df = df[["Country", "EdLevel", "YearsCodePro", "Employment", "ConvertedComp"]]
+df = df.rename({"ConvertedComp": "Salary"}, axis=1)
+df.head()
+```
+
+Output :
+
+```
+Country	EdLevel	YearsCodePro	Employment	Salary
+0	Germany	Master’s degree (M.A., M.S., M.Eng., MBA, etc.)	27	Independent contractor, freelancer, or self-em...	NaN
+1	United Kingdom	Bachelor’s degree (B.A., B.S., B.Eng., etc.)	4	Employed full-time	NaN
+2	Russian Federation	NaN	NaN	NaN	NaN
+3	Albania	Master’s degree (M.A., M.S., M.Eng., MBA, etc.)	4	NaN	NaN
+4	United States	Bachelor’s degree (B.A., B.S., B.Eng., etc.)	8	Employed full-time	NaN
+```
