@@ -1,8 +1,6 @@
 # Data Mining
 
-<p>
-Nama    : Herdiangga Pratama
-NIM     : H071211043
-</p>
+Nama : Herdiangga Pratama <br/>
+NIM : H071211043 <br/>
 
 # Aplikasi Prediksi Gaji per Tahun Software Developer 2022
