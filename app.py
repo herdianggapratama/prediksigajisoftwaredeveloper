@@ -115,7 +115,7 @@ if page == "Prediksi":
         X = X.astype(float)
 
         salary = regressor.predict(X)
-        st.subheader(f"Diperkirakan gaji per tahunnya sekitar USD {salary[0]:.2f} atau IDR {cc.convert(salary, 'USD', 'IDR'):.2f}")
+        st.subheader(f"Diperkirakan gaji per tahunnya sekitar USD {salary[0]:0,.2f} atau IDR {cc.convert(salary, 'USD', 'IDR'):0,.2f}")
 
 else:
     st.title("Eksplor Gaji per Tahun Software Developer 2022")
