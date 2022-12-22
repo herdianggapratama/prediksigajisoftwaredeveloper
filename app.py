@@ -101,8 +101,11 @@ if page == "Prediksi":
 
     country = st.selectbox("Negara", countries)
     education = st.selectbox("Tingkat Pendidikan", education)
+    if countries == "Indonesia":
+        education = st.selectbox("Tingkat Pendidikan", education, disabled=True)
 
     expericence = st.slider("Pengalaman (Tahun)", 0, 50, 3)
+
 
     ok = st.button("Prediksi Gaji")
     if ok:
