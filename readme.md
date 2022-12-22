@@ -117,3 +117,67 @@ Sweden                 514
 Indonesia              116
 Name: Country, dtype: int64
 ```
+
+9. Pembersihan datapoint Experience
+
+```python
+df["YearsCodePro"].unique()
+```
+
+Output:
+
+```python
+   array(['13', '4', '2', '7', '20', '1', '3', '10', '12', '29', '6', '28',
+          '8', '23', '15', '25', '9', '11', 'Less than 1 year', '5', '21',
+          '16', '18', '14', '32', '19', '22', '38', '30', '26', '27', '17',
+          '24', '34', '35', '33', '36', '40', '39', 'More than 50 years',
+          '31', '37', '41', '45', '42', '44', '43', '50', '49'], dtype=object)
+```
+
+Membersihkan datapoint YearsCodePro (Experience)
+
+```python
+def clean_experience(x):
+    if x ==  'More than 50 years':
+        return 50
+    if x == 'Less than 1 year':
+        return 0.5
+    return float(x)
+
+df['YearsCodePro'] = df['YearsCodePro'].apply(clean_experience)
+```
+
+10. Pembersihan datapoint Education Level
+
+```python
+df["EdLevel"].unique()
+```
+
+Output:
+
+```
+array(['Bachelor’s degree (B.A., B.S., B.Eng., etc.)',
+       'Master’s degree (M.A., M.S., M.Eng., MBA, etc.)',
+       'Some college/university study without earning a degree',
+       'Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)',
+       'Associate degree (A.A., A.S., etc.)',
+       'Professional degree (JD, MD, etc.)',
+       'Other doctoral degree (Ph.D., Ed.D., etc.)',
+       'I never completed any formal education',
+       'Primary/elementary school'], dtype=object)
+```
+
+Membersihkan datapoint EdLevel (Education Level)
+
+```python
+def clean_education(x):
+    if 'Bachelor’s degree' in x:
+        return 'S1'
+    if 'Master’s degree' in x:
+        return 'S2'
+    if 'Professional degree' in x or 'Other doctoral' in x:
+        return 'S3'
+    return 'Bukan Sarjana'
+
+df['EdLevel'] = df['EdLevel'].apply(clean_education)
+```
